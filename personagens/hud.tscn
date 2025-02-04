@@ -1,0 +1,197 @@
+[gd_scene load_steps=21 format=3 uid="uid://byy4vcva3su13"]
+
+[ext_resource type="Texture2D" uid="uid://dquwkyjoi1ccv" path="res://assets/coracao/coracao.png" id="1_t5xen"]
+[ext_resource type="Script" path="res://hud.gd" id="1_tqur6"]
+[ext_resource type="Script" path="res://scripts/control.gd" id="2_26mgf"]
+[ext_resource type="Texture2D" uid="uid://d0np8l7ibr7ae" path="res://itens/Star.png" id="4_8n66w"]
+[ext_resource type="Script" path="res://personagens/control_2.gd" id="4_r0cop"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7vhy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t5xen")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6miwx"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws7du"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6m7d"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpu7u"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohvhq"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3pvq"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sue54"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxfqp"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3m8w"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocwb0"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ttrq"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w4fk"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klsml"]
+atlas = ExtResource("4_8n66w")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pklnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6miwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws7du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6m7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpu7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohvhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3pvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sue54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxfqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3m8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocwb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ttrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6w4fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klsml")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_tqur6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_26mgf")
+
+[node name="container" type="MarginContainer" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_right = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="container_vidas" type="HBoxContainer" parent="Control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="vidas_label" type="Label" parent="Control/container/container_vidas"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "003"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/container/container_vidas"]
+position = Vector2(-13, 12)
+scale = Vector2(-0.0406764, 0.0347816)
+sprite_frames = SubResource("SpriteFrames_c7vhy")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_r0cop")
+
+[node name="container2" type="MarginContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="container_estrelas" type="HBoxContainer" parent="Control2/container2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="contador_estrelas" type="Label" parent="Control2/container2/container_estrelas"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+text = "000"
+horizontal_alignment = 2
+
+[node name="anim" type="AnimatedSprite2D" parent="Control2/container2/container_estrelas/contador_estrelas"]
+position = Vector2(-13, 11)
+scale = Vector2(0.937499, 0.75)
+sprite_frames = SubResource("SpriteFrames_pklnf")
+frame_progress = 0.817121

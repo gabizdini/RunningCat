@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci1q5vqbqy6bs"]
+
+[ext_resource type="Script" path="res://telavitoria.gd" id="1_p80j8"]
+[ext_resource type="Texture2D" uid="uid://opt7edu6bddy" path="res://assets/telavitoria.png" id="2_dmbgc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7r2t"]
+size = Vector2(141.5, 23.5)
+
+[node name="telavitoria" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_p80j8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+position = Vector2(321, 159)
+scale = Vector2(0.996875, 0.888889)
+texture = ExtResource("2_dmbgc")
+
+[node name="botao_reiniciar" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(322, 165)
+shape = SubResource("RectangleShape2D_a7r2t")
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]

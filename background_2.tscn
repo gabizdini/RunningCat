@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci0xl2bcsjxo3"]
+
+[ext_resource type="Texture2D" uid="uid://d0ecb1h8ai6ln" path="res://Background parts/5 - Sky_color.png" id="2_jhm4r"]
+
+[node name="background2" type="Node2D"]
+position = Vector2(15, 5)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ceu" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ceu"]
+position = Vector2(321, 4)
+scale = Vector2(2.21875, 1.54327)
+texture = ExtResource("2_jhm4r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ceu"]
+position = Vector2(321, 325)
+scale = Vector2(2.21875, 1.54327)
+texture = ExtResource("2_jhm4r")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ceu"]
+position = Vector2(321, 646)
+scale = Vector2(2.21875, 1.54327)
+texture = ExtResource("2_jhm4r")

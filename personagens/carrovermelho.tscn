@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dl8qx3v0vvoyd"]
+
+[ext_resource type="Script" path="res://personagens/carrovermelho.gd" id="1_u2svl"]
+[ext_resource type="Texture2D" uid="uid://b3uanysk8454h" path="res://assets 1/carros.png" id="1_y5sxq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agb1c"]
+atlas = ExtResource("1_y5sxq")
+region = Rect2(100, 0, 50, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_17ihu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agb1c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl8na"]
+size = Vector2(88, 47)
+
+[node name="carrovermelho" type="CharacterBody2D" groups=["inimigos"]]
+script = ExtResource("1_u2svl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.5708
+sprite_frames = SubResource("SpriteFrames_17ihu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_fl8na")

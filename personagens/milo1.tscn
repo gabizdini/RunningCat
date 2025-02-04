@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://bt2hp13r4hgst"]
+
+[ext_resource type="Texture2D" uid="uid://d144ap02qi25i" path="res://assets/cats/black_2.png" id="1_qbopd"]
+[ext_resource type="Script" path="res://scripts/milo1.gd" id="1_y38sf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feg7i"]
+atlas = ExtResource("1_qbopd")
+region = Rect2(128, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us7wv"]
+atlas = ExtResource("1_qbopd")
+region = Rect2(160, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn4s7"]
+atlas = ExtResource("1_qbopd")
+region = Rect2(128, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5spc"]
+atlas = ExtResource("1_qbopd")
+region = Rect2(384, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itjav"]
+atlas = ExtResource("1_qbopd")
+region = Rect2(416, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg2gv"]
+atlas = ExtResource("1_qbopd")
+region = Rect2(448, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bjqv"]
+atlas = ExtResource("1_qbopd")
+region = Rect2(480, 288, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8u6mu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feg7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us7wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn4s7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5spc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itjav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg2gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bjqv")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vhah8"]
+radius = 11.0
+height = 38.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_803f0"]
+size = Vector2(21, 35)
+
+[node name="milo1" type="CharacterBody2D"]
+position = Vector2(32, 3)
+script = ExtResource("1_y38sf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.26172, 1.88281)
+sprite_frames = SubResource("SpriteFrames_8u6mu")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_vhah8")
+
+[node name="dano_milo" type="Area2D" parent="."]
+
+[node name="colisao_dano" type="CollisionShape2D" parent="dano_milo"]
+position = Vector2(-1.5, -3.5)
+shape = SubResource("RectangleShape2D_803f0")
+debug_color = Color(0.976542, 0, 0.411053, 0.42)
+
+[connection signal="body_entered" from="dano_milo" to="." method="_on_dano_milo_body_entered"]

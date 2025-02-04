@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dps18tnq7re5i"]
+
+[ext_resource type="Script" path="res://personagens/carroazul.gd" id="1_l3k6w"]
+[ext_resource type="Texture2D" uid="uid://b3uanysk8454h" path="res://assets 1/carros.png" id="1_pdedo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j55ym"]
+atlas = ExtResource("1_pdedo")
+region = Rect2(50, 0, 50, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s347d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j55ym")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y22nr"]
+size = Vector2(87, 44)
+
+[node name="carroazul" type="CharacterBody2D" groups=["inimigos"]]
+script = ExtResource("1_l3k6w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_s347d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -2)
+shape = SubResource("RectangleShape2D_y22nr")
