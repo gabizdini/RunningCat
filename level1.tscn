@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cjy2fxpputvsq"]
+[gd_scene load_steps=14 format=4 uid="uid://cjy2fxpputvsq"]
 
 [ext_resource type="Script" path="res://level1.gd" id="1_6ux02"]
 [ext_resource type="PackedScene" uid="uid://ihm85istn4pn" path="res://background1.tscn" id="1_dry4o"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/fimdafase_1.gd" id="8_o8jdq"]
 [ext_resource type="Texture2D" uid="uid://ds7ov47qct6by" path="res://assets/Terrain/Terrain (16x16).png" id="9_bwris"]
 [ext_resource type="PackedScene" uid="uid://b161o1iqlffkc" path="res://estrela.tscn" id="9_f5ne0"]
+[ext_resource type="AudioStream" uid="uid://bkhxgxwj5k7q6" path="res://Trilha Sonora/Cat's Road Adventure.mp3" id="10_xysg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqmwo"]
 size = Vector2(647, 51)
@@ -257,7 +258,6 @@ posicao_inicial = Vector2(-49, -930)
 [node name="HUD" parent="." instance=ExtResource("6_5npsg")]
 
 [node name="reiniciar_jogo" type="Timer" parent="."]
-wait_time = 0.001
 
 [node name="fimdafase1" type="Area2D" parent="."]
 position = Vector2(320, -1809)
@@ -274,15 +274,16 @@ tile_map_data = PackedByteArray("AAAAAAoAAAARAAQAAAABAAoAAAASAAQAAAACAAoAAAASAAQ
 tile_set = SubResource("TileSet_7egm6")
 
 [node name="estrela" parent="." instance=ExtResource("9_f5ne0")]
-position = Vector2(165, -179)
-
-[node name="estrela4" parent="." instance=ExtResource("9_f5ne0")]
-position = Vector2(226, 265)
+position = Vector2(343, -172)
 
 [node name="estrela2" parent="." instance=ExtResource("9_f5ne0")]
-position = Vector2(498, -675)
+position = Vector2(350, -675)
 
 [node name="estrela3" parent="." instance=ExtResource("9_f5ne0")]
 position = Vector2(313, -1118)
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_xysg2")
+volume_db = -1.0
 
 [connection signal="body_entered" from="fimdafase1" to="fimdafase1" method="_on_body_entered"]

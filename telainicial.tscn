@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://55pfh2h5ve1f"]
+[gd_scene load_steps=6 format=3 uid="uid://55pfh2h5ve1f"]
 
+[ext_resource type="Script" path="res://scripts/telainicial.gd" id="1_7h4cb"]
 [ext_resource type="Script" path="res://scripts/area_2d.gd" id="1_iptyb"]
 [ext_resource type="Texture2D" uid="uid://bdv44jj77rxmx" path="res://assets 1/tela_inicial.png" id="2_mxb11"]
+[ext_resource type="AudioStream" uid="uid://cl6uvferw6cfo" path="res://Trilha Sonora/Cat On The Run.mp3" id="4_hanct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7h0u3"]
 size = Vector2(139, 23)
 
 [node name="telainicial" type="Node2D"]
+script = ExtResource("1_7h4cb")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("1_iptyb")
@@ -20,5 +23,9 @@ texture = ExtResource("2_mxb11")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(321.5, 208.5)
 shape = SubResource("RectangleShape2D_7h0u3")
+
+[node name="musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hanct")
+volume_db = -1.0
 
 [connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cgx862ah037lx"]
+[gd_scene load_steps=33 format=4 uid="uid://cgx862ah037lx"]
 
 [ext_resource type="Texture2D" uid="uid://ds7ov47qct6by" path="res://assets/Terrain/Terrain (16x16).png" id="1_jwguu"]
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_n3jxb"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://scripts/portal.gd" id="12_tuwc3"]
 [ext_resource type="Texture2D" uid="uid://ccda7csnegywv" path="res://assets/Green Portal Sprite Sheet.png" id="13_vi5xb"]
 [ext_resource type="PackedScene" uid="uid://ci0xl2bcsjxo3" path="res://background_2.tscn" id="14_ggodb"]
+[ext_resource type="AudioStream" uid="uid://xgi224txcfg5" path="res://Trilha Sonora/Climbing Through The Trees.wav" id="15_j52yt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71op6"]
 texture = ExtResource("3_ouwpd")
@@ -12951,7 +12952,12 @@ position = Vector2(0, -1.5)
 shape = SubResource("CapsuleShape2D_p7nb6")
 
 [node name="background2" parent="." instance=ExtResource("14_ggodb")]
-position = Vector2(54, 43)
+position = Vector2(91, 389)
+
+[node name="musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_j52yt")
+volume_db = -1.0
+autoplay = true
 
 [connection signal="timeout" from="reiniciar_jogo" to="." method="_on_reiniciar_jogo_timeout"]
 [connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]

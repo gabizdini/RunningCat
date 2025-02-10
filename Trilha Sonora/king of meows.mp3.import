@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ch8xfgr3kdnkc"
+path="res://.godot/imported/king of meows.mp3-9dd8eb8178e58abb30ef52aa62c18877.mp3str"
+
+[deps]
+
+source_file="res://Trilha Sonora/king of meows.mp3"
+dest_files=["res://.godot/imported/king of meows.mp3-9dd8eb8178e58abb30ef52aa62c18877.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

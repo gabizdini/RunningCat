@@ -25,6 +25,7 @@ size = Vector2(88, 47)
 script = ExtResource("1_u2svl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_17ihu")
 

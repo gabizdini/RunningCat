@@ -70,7 +70,7 @@ radius = 11.0
 height = 38.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_803f0"]
-size = Vector2(21, 35)
+size = Vector2(20, 39)
 
 [node name="milo1" type="CharacterBody2D"]
 position = Vector2(32, 3)
@@ -89,7 +89,7 @@ shape = SubResource("CapsuleShape2D_vhah8")
 [node name="dano_milo" type="Area2D" parent="."]
 
 [node name="colisao_dano" type="CollisionShape2D" parent="dano_milo"]
-position = Vector2(-1.5, -3.5)
+position = Vector2(-1, -4.5)
 shape = SubResource("RectangleShape2D_803f0")
 debug_color = Color(0.976542, 0, 0.411053, 0.42)
 

@@ -79,6 +79,6 @@ func _on_dano_milo_body_entered(body: Node2D) -> void:
 
 		if Globals.vidas <= 0:
 			Globals.vidas = 3
-			#Globals.estrelas = 0 a animação da estrela não reseta
+			#Globals.estrelas = 0 #a animação da estrela não reseta
 			hud.atualizar_vidas()
 			get_tree().current_scene.reiniciar_fase()

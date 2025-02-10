@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xgi224txcfg5"
+path="res://.godot/imported/Climbing Through The Trees.wav-54fbec2a66f597d9e74f642426f4269e.sample"
+
+[deps]
+
+source_file="res://Trilha Sonora/Climbing Through The Trees.wav"
+dest_files=["res://.godot/imported/Climbing Through The Trees.wav-54fbec2a66f597d9e74f642426f4269e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

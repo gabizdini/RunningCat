@@ -3,8 +3,9 @@ extends CharacterBody2D
 
 const speed = 150.0  
 const jump_velocity = -400.0 
+@onready var jump_sound = $JumpSound
 
-const fall_limit = 400 
+const fall_limit = 389 
 
 @onready var anim = $AnimatedSprite2D
 @onready var remote = $remote as RemoteTransform2D
@@ -57,7 +58,7 @@ func _physics_process(delta: float) -> void:
 				anim.flip_h = false
 		# Se não estiver no chão, o personagem fica com a animação de pulo
 		if not anim.is_playing() or anim.animation != "jump":
-			anim.play("jump")
+			anim.play("jump") 
 	
 	# Aplica a gravidade
 	velocity += get_gravity() * delta

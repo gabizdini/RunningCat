@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkhxgxwj5k7q6"
+path="res://.godot/imported/Cat's Road Adventure.mp3-7dbafb1ac823fdb9ed7ff127f22260fa.mp3str"
+
+[deps]
+
+source_file="res://Trilha Sonora/Cat's Road Adventure.mp3"
+dest_files=["res://.godot/imported/Cat's Road Adventure.mp3-7dbafb1ac823fdb9ed7ff127f22260fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
